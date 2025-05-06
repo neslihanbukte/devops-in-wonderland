@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  php:
+    build: .
+    depends_on:
+      - mailpit
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "8025:8025"
+      - "1025:1025"
